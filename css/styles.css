@@ -11,7 +11,7 @@
     --header-border-color: #ECECEC;
     --portfolio-card-border-color: #EEEEEE;
     --hero_background_color: #C4C4C4;
-    --account-icon-color: #AFB1B8;
+    --icon-background-color: #AFB1B8;
 
 }
 
@@ -65,6 +65,14 @@ body {
     clip: rect(0 0 0 0);
     overflow: hidden;
 }
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+}
 /* ===========HEADER========= */
 
 .header-container {
@@ -106,12 +114,13 @@ body {
 .header-contact-list {
     margin-left: auto;
 }
-.header-contact-list-svg {
+.header-contact-list-icon {
     margin-right: 10px;
-    fill: var(--text-color);
+    fill: currentColor;
 }
 .header-contact-list-item {
     display: flex;
+    align-items: center;
     
 }
 .navigation-list-item:not(:last-child),
@@ -139,8 +148,8 @@ body {
 .header-contact-list-link:focus {
     color: var(--accent-color);
 }
-.header-contact-list-link:hover .header-contact-list-svg,
-.header-contact-list-link:focus .header-contact-list-svg {
+.header-contact-list-link:hover .header-contact-list-icon,
+.header-contact-list-link:focus .header-contact-list-icon {
     fill: var(--accent-color);
 }
 
@@ -214,7 +223,7 @@ body {
     padding-top: 25px;
     margin-bottom: 30px;
 }
-.advantages-list-svg {
+.advantages-list-icon {
    display: block;
    margin: auto auto;
 }
@@ -304,19 +313,14 @@ body {
     align-items: center;
 }
 .team-member-accounts-list-link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
+    color: var(--icon-background-color);
     background-color: var(--light-background-color);
-}
-.team-member-accounts-list-icon {
-    fill: var(--account-icon-color);
 }
 .team-member-accounts-list-item {
     margin-top: 16px;
+}
+.team-member-accounts-list-icon {
+    fill: currentColor;
 }
 .team-member-accounts-list-item:not(:last-child) {
     margin-right: 10px;
@@ -328,6 +332,49 @@ body {
 .team-member-accounts-list-link:hover,
 .team-member-accounts-list-link:focus {
     background-color: var(--accent-color);
+}
+
+/*=================CLIENTS===============*/
+
+.clients-title {
+    margin-bottom: 50px;
+
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.17;
+    text-align: center;
+    letter-spacing: 0.03em;
+    
+    color: var(--title-color);
+}
+.clients-list {
+    display: flex;
+}
+.clients-list-item {
+    width: 170px;
+    height: 92px;
+    padding-top: 16px;
+    border: 1px solid var(--icon-background-color);
+    border-radius: 4px;
+    color: var(--icon-background-color);
+}
+.clients-list-link {
+    color: inherit;
+}
+.clients-list-item:not(:last-child) {
+    margin-right: 30px;
+}
+.clients-list-icon {
+    display: block;
+    margin: auto;
+    fill: currentColor;
+}
+.clients-list-item:hover {
+    border: 1px solid var(--accent-color);
+}
+.clients-list-item:hover .clients-list-icon,
+.clients-list-item:focus .clients-list-icon {
+    fill: var(--accent-color);
 }
 
 /*==================FOOTER=============*/
@@ -375,6 +422,41 @@ body {
 .contact-info-phone:focus {
     color: var(--accent-color)
 }
+.footer-social-links-title {
+    margin-bottom: 20px;
+
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    
+    color: var(--light-background-color);
+}
+.footer-social-links-list {
+    display: flex;
+}
+.footer-social-links-link {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--light-background-color);
+}
+.footer-social-links-item:not(:last-child) {
+    margin-right: 10px;
+}
+.footer-social-links-icon {
+    fill: currentColor;
+}
+.footer-social-links-link:hover,
+.footer-social-links-link:focus {
+    background-color: var(--accent-color);
+}
+.footer-container {
+    display: flex;
+    align-items: baseline;
+}
+.footer-left-side {
+    margin-right: 70px;
+}
 
 /*=================PORTFOLIO===============*/
 
@@ -398,12 +480,14 @@ body {
     letter-spacing: 0.03em;
     color: var(--title-color);
     background-color: var(--light-grey-background-color);
+    border: none;
     cursor: pointer;
 }
 .portfolio-filter-button:hover,
 .portfolio-filter-button:focus {
     color: var(--light-background-color);
     background-color: var(--accent-color);
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 .projects {
     display: flex;
@@ -412,6 +496,10 @@ body {
 .projects-item {
     flex-basis: calc((100% - 60px) / 3);
     background-color: var(--light-background-color);
+}
+.projects-item:hover,
+.projects-item:focus {
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 .projects-item:not(:nth-child(3n)) {
     margin-right: 30px;
