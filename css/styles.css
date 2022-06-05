@@ -217,7 +217,7 @@ body {
 .advantages-item:not(:last-child) {
     margin-right: 30px;
 }
-.advantages-list-thumb {
+.advantages-list-box {
     background-color: var(--light-grey-background-color);
     border-radius: 4px;
     width: 100%;
